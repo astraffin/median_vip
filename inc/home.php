@@ -1,6 +1,7 @@
 <!-- MAIN BODY -->
 <!-- Carousel
     ================================================== -->
+</div> <!--END CONTAINER FOR JUMBOTRON -->
     <div id="myCarousel" class="carousel slide">
       <div class="carousel-inner">
         <div class="item active">
@@ -37,7 +38,7 @@
       <a class="left carousel-control" href="http://twitter.github.com/bootstrap/examples/carousel.html#myCarousel" data-slide="prev"><i class="icon-chevron-left icon-white"></i></a>
       <a class="right carousel-control" href="http://twitter.github.com/bootstrap/examples/carousel.html#myCarousel" data-slide="next"><i class="icon-chevron-right icon-white"></i></a>
     </div><!-- /.carousel -->
-
+<div class="container"> <!-- START CONTAINER POST JUMBOTRON -->
 
 
 <!-- END MAIN -->

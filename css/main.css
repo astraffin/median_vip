@@ -11,6 +11,7 @@
 
 .navbar .btn-mini, .navbar .btn-group {
 	margin-top: 9px;
+	
 }
 
 .nav-hidden {
@@ -31,15 +32,17 @@
 /* Carousel Configs */
 
 
+	  
     /* Carousel base class */
+	
 	
     .carousel {
       margin-bottom: 60px;
     }
 	.carousel {
-		
-        margin-left: -20px;
+		margin-left: -20px;
         margin-right: -20px;
+		margin-top: -20px;
       }
     .carousel .container {
       position: absolute;
@@ -141,10 +144,7 @@
         margin-bottom: 0;
         width: auto;
       }
-      /*.navbar-inner {
-        border-radius: 0;
-        margin: -20px 0;
-      }*/
+      
 		.carousel {
         margin-left: -20px;
         margin-right: -20px;
@@ -173,16 +173,15 @@
 
     @media (max-width: 767px) {
 
-      /*.navbar-inner {
-        margin: -20px;
-      }*/
+      
+      
 
       .carousel {
         margin-left: -20px;
         margin-right: -20px;
       }
       .carousel .container {
-
+		
       }
       .carousel .item {
         height: 300px;
