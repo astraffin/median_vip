@@ -38,7 +38,7 @@ $isdealer = 1;
                                     <li <?php if ($isdealer != 1){echo "class=\"nav-hidden\"";}?> class="divider"></li>
                                     <li <?php if ($isdealer != 1){echo "class=\"nav-hidden\"";}?> class="nav-header">Dealer Tools</li>
                                     <li <?php if ($isdealer != 1){echo "class=\"nav-hidden\"";} if ($page == "dpro"){echo "class=\"active\"";}?>><a href="index.php?p=dpro">Dealer Profile</a></li>
-                                    <li <?php if ($isdealer != 1){echo "class=\"nav-hidden\"";} if ($page == "dash"){echo "class=\"active\"";}?>><a href="index.php?p=dash">Dealer Dashboard</a></li>
+                                    <li <?php if ($isdealer != 1){echo "class=\"nav-hidden\"";} if ($page == "ddash"){echo "class=\"active\"";}?>><a href="index.php?p=ddash">Dealer Dashboard</a></li>
 									<li <?php if ($isdealer != 1){echo "class=\"nav-hidden\"";} if ($page == "mndls"){echo "class=\"active\"";}?>><a href="index.php?p=newdeal">Manage Deals</a></li>
 									<li <?php if ($isdealer != 1){echo "class=\"nav-hidden\"";} if ($page == "nwdl"){echo "class=\"active\"";}?>><a href="index.php?p=newdeal">New Deal</a></li>
 									
