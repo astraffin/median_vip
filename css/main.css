@@ -1,6 +1,7 @@
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+html {overflow-y:scroll;}
 
 .nav-welcome {
 	padding-top: 10px;
@@ -21,6 +22,7 @@
 	line-height: 30px;
 	font-weight: bold;
 }	
+
 
 .collapse {
 	position: static;

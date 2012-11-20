@@ -2,10 +2,10 @@
 <?php
 
 // Database Config: Replace info inside "" with your database info.
-$db_server = "SERVER_NAME";
-$db_user = "USERNAME";
-$db_pass = "PASSWORD";
-$db_name = "DATABASE_NAME";
+$db_server = "mysql.squaqr.com";
+$db_user = "median_db_user";
+$db_pass = "passenger57!";
+$db_name = "median_vip";
 
 
 

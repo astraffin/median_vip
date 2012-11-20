@@ -63,21 +63,3 @@ $isdealer = 1;
 
 <!-- MAIN CONTAINER START -->
 <div class="container">
-<!-- REGISTRATION OPTION MODAL START -->
-								<div id="reg-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="reg-modal-label" aria-hidden="true">
-								  <div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i></button>
-									<h3 id="reg-modal-label">Registration</h3>
-								  </div>
-								  <div class="modal-body">
-										<span class="inline-h3">Sign up as a user</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									<a class="btn btn-success" href="index.php?p=ureg">User Registration</a>
-									<hr>
-										<span class="inline-h3">Sign up as a dealer</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									<a class="btn btn-success" href="index.php?p=dreg">Dealer Registration</a>
-								  </div>
-								  <div class="modal-footer">
-									<a class="btn" data-dismiss="modal">Cancel</a>
-								  </div>
-								</div>
-<!-- END REGISTRATION OPTION MODAL -->
