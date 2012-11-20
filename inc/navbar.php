@@ -1,7 +1,6 @@
 <!--- NAVBAR -->
 <?php $page = $_GET['p']; ?>
 
-
 <!-- USER SESSION TEST -->
 <?php
 if (isset($_SESSION['user_id'])){
