@@ -44,9 +44,9 @@ $isdealer = 1;
 									
 								</ul>
                             </li>
-                            <li <?php if ($page == "contact"){echo "class=\"active\"";}?>><a href="index.php?p=contact">Contact</a></li>
+                            <li <?php if ($page == "about"){echo "class=\"active\"";}?>><a href="index.php?p=about">About</a></li>
 				
-							<?php if(!$user_session){echo "<li><a href=\"#reg-modal\" data-toggle=\"modal\">Register</a></li>";}?>
+							<?php if(!$user_session){echo "<li><a href=\"index.php?p=ureg\" data-toggle=\"modal\">Register</a></li>";}?>
 								
                         </ul>
                         <?php if(!$user_session){echo "<form action=\"login.php\" method=\"post\" class=\"navbar-form pull-right\">
