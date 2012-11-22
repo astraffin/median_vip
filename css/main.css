@@ -8,6 +8,11 @@ html {overflow-y:scroll;}
 	padding-left: 40px;
 }
 
+.nav-notice {
+	margin-top: 10px;
+	padding-left: 40px;
+}
+
 .navbar .btn-mini, .navbar .btn-group {
 	margin-top: 9px;
 	
