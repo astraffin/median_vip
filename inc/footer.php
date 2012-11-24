@@ -1,11 +1,12 @@
-<div class="span10">
+ </div> <!-- /container -->
+<div class="container">
             <hr>
 
             <footer>
                 <p>&copy; Company 2012</p>
             </footer>
 		</div>
-        </div> <!-- /container -->
+       
 		
 	
     <script>

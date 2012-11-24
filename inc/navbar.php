@@ -49,7 +49,7 @@ $isdealer = 1;
 							<?php if(!$user_session){echo "<li><a href=\"index.php?p=ureg\" data-toggle=\"modal\">Register</a></li>";}?>
 							
 <!-- Logout Confirmation -->
-<?php if($_GET['lo'] == 1) {echo "<li class=\"nav-notice\"><span class=\"text-error\">You have successfully logged out!</span></li>";} ?>
+<?php if($_GET['lo'] == 1) {echo "<li class=\"nav-notice\"><span class=\"text-error\">You have </span><span class=\"responsive-hide text-error\">successfully </span><span class=\"text-error\">logged out!</span></li>";} ?>
 <!-- End logout confirmation -->
 							
                         </ul>
