@@ -55,7 +55,7 @@ $isdealer = 1;
                         </ul>
 
                         <?php if(!$user_session){echo "<form action=\"login.php\" method=\"post\" class=\"navbar-form pull-right\">
-                            <input class=\"span2\" type=\"text\" name=\"username\" placeholder=\"Email\">
+                            <input class=\"span2\" type=\"text\" name=\"username\" placeholder=\"Username\">
                             <input class=\"span2\" type=\"password\" name=\"password\" placeholder=\"Password\">
                             <button type=\"submit\" class=\"btn\">Sign in</button></form>";}else{ 
 							echo "<ul class=\"nav nav-welcome\"><span class=\"nav-greeting\">Hi, " . $_SESSION['fname'] . "</span></li></ul>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href=\"logout.php\" class=\"btn btn-mini btn-inverse\"> Sign out</a>";}?>
