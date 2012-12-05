@@ -8,6 +8,11 @@ html {overflow-y:scroll;}
 	padding-left: 40px;
 }
 
+.nav-notice {
+	margin-top: 10px;
+	padding-left: 40px;
+}
+
 .navbar .btn-mini, .navbar .btn-group {
 	margin-top: 9px;
 	
@@ -136,7 +141,11 @@ html {overflow-y:scroll;}
 
     /* RESPONSIVE CSS
     -------------------------------------------------- */
-
+	@media (max-width: 1200px) {
+  	  .responsive-hide {
+  		  display:none;
+  	  }
+	}
     @media (max-width: 979px) {
 
       .container.navbar-wrapper {
@@ -144,6 +153,9 @@ html {overflow-y:scroll;}
         width: auto;
       }
       
+	  .responsive-hide {
+		  display:none;
+	  }
 		
       .carousel .item {
         height: 300px;
@@ -188,6 +200,9 @@ html {overflow-y:scroll;}
       .carousel .container {
 		
       }
+	  .responsive-hide {
+		  display: none;
+	  }
       .carousel .item {
         height: 300px;
       }

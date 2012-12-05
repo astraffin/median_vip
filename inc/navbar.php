@@ -47,10 +47,15 @@ $isdealer = 1;
                             <li <?php if ($page == "about"){echo "class=\"active\"";}?>><a href="index.php?p=about">About</a></li>
 				
 							<?php if(!$user_session){echo "<li><a href=\"index.php?p=ureg\" data-toggle=\"modal\">Register</a></li>";}?>
-								
+							
+<!-- Logout Confirmation -->
+<?php if($_GET['lo'] == 1) {echo "<li class=\"nav-notice\"><span class=\"text-error\">You have </span><span class=\"responsive-hide text-error\">successfully </span><span class=\"text-error\">logged out!</span></li>";} ?>
+<!-- End logout confirmation -->
+							
                         </ul>
+
                         <?php if(!$user_session){echo "<form action=\"login.php\" method=\"post\" class=\"navbar-form pull-right\">
-                            <input class=\"span2\" type=\"text\" name=\"username\" placeholder=\"Email\">
+                            <input class=\"span2\" type=\"text\" name=\"username\" placeholder=\"Username\">
                             <input class=\"span2\" type=\"password\" name=\"password\" placeholder=\"Password\">
                             <button type=\"submit\" class=\"btn\">Sign in</button></form>";}else{ 
 							echo "<ul class=\"nav nav-welcome\"><span class=\"nav-greeting\">Hi, " . $_SESSION['fname'] . "</span></li></ul>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href=\"logout.php\" class=\"btn btn-mini btn-inverse\"> Sign out</a>";}?>
