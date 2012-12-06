@@ -17,7 +17,7 @@
 			$issetup = $query_array['is_setup'];
 			$isdealer = $query_array['is_dealer'];
 			//echo $user_id;
-			if ($user_id == NULL) { echo "<!--- NAVBAR -->"; include('inc/navbar.php'); echo "<!--- END NAVBAR -->"; echo "<div class=\"alert alert-error\"><strong>Oops!</strong> &nbsp;Your login attempt failed!<br>Please try again or click \"Forgot password\".</div>"; echo include('inc/lform.php'); } else {$_SESSION['user_id'] = $user_id; $_SESSION['fname'] = $fname; $_SESSION['is_setup'] = $issetup; $_SESSION['is_dealer'] = $isdealer; echo "<script type=\"text/javascript\">window.location = \"index.php\"</script>";}
+			if ($user_id == NULL) { echo "<!--- NAVBAR -->"; include('inc/navbar.php'); echo "<!--- END NAVBAR -->"; echo "<div class=\"alert alert-error\"><strong>Oops!</strong> &nbsp;Your login attempt failed!<br>Please try again or click \"Forgot password\".</div>"; echo include('inc/lform.php'); } else {$_SESSION['user_id'] = $user_id; $_SESSION['fname'] = $fname; $_SESSION['is_setup'] = $issetup; $_SESSION['is_dealer'] = $isdealer; echo "<script type=\"text/javascript\">window.location = \"index.php?p=deals\"</script>";}
 ?>
 <!--- END LOGIN -->
 
