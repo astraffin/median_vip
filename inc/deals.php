@@ -31,3 +31,4 @@ echo "class=\"btn btn-primary\">Details</a></div>";
 	
 	
 <!-- END MAIN -->
+
