@@ -26,7 +26,7 @@ if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $filedir)) {
 
 //Display Preview
 
-
+echo "<div class=\"alert\"><strong>Heads up! This is just a preview. Click the button below to \"Submit this deal\" for approval.</strong></div>";
 echo "<div class=\"span4\">";
 echo "<img src=\"" . $imgloc . "\" class=\"img-polaroid\" width=\"400px\">";
 echo "</div>";
@@ -50,7 +50,7 @@ echo "<div class=\"span6\">";
 echo "</div>";
 echo "<div class=\"span4\">";
 echo "<br><br>";
-echo "<input type=\"button\" value=\"Get this Deal\" class=\"btn btn-large btn-block btn-primary\" type=\"button\">";
+echo "<input type=\"button\" value=\"Submit this Deal\" class=\"btn btn-large btn-block btn-primary\" type=\"button\">";
 	
 echo "</div>";
 
