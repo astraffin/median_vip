@@ -7,10 +7,10 @@
 	<h2>Create a new Deal</h2>
 	</div>
 	<hr>
-	<p>Welcome. Please fill in the inforamtion below and a new Deal will be submitted for approval.</p>		
+	<p>Welcome. Please fill in the information below and a new deal will be submitted for approval.</p>		
 	<hr>
 	
-	<form action="dealsub.php" method="post">
+	<form action="submit.php" enctype="multipart/form-data" method="post">
 	
 	<!--[if lte IE 8]><label for="fname">Deal Title: </label><![endif]-->
 			<input type="text" name="dtitle" class="span5" placeholder="Deal Title">
@@ -29,16 +29,21 @@
 			<hr>
 			
 	<!--[if lte IE 8]><label for="fname">Start Date: </label><![endif]-->
-			<input type="text" name="sdate" placeholder="Start Date">
-			<br>
-	<!--[if lte IE 8]><label for="fname">End Date: </label><![endif]-->
-			<input type="text" name="edate" placeholder="End Date">
-			
+			<input type="text" name="sdate" placeholder="Start Date"> <br>(All deals run for 30 days from original start date)
+
 			<hr>
 			
-	<!--[if lte IE 8]><label for="fname">Orignal Price: </label><![endif]-->
-			<input type="text" name="dname" placeholder="Original Price">
-			
+	
+	<input type="hidden" name="MAX_FILE_SIZE" value="200000">
+	<p><strong><em>Upload an image for this deal:</em></strong></p>
+	Choose a file to upload: <br>
+	<input name="uploadedfile" type="file"><br>
+	
+	<hr>
+	
+	<button type="submit" class="btn btn-primary">
+	Continue&nbsp;&nbsp;<i class="icon-arrow-right icon-white"></i>
+	</button>
 		
 	
 	</form>
