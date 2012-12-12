@@ -22,8 +22,8 @@ echo "\" class=\"img-polaroid\"></div><div class=\"span6\">";
 echo "<h3>" . $deal_name . "</h3>";
 echo "<p>" . $dealtext . "</p></div>";
 echo "<div class=\"span2\">";
-echo "<br><a href=\"index.php?p=detail\" ";
-echo "class=\"btn btn-primary\">Details</a></div>";
+echo "<br><input type=\"button\" value=\"Details\"";
+echo "class=\"btn btn-primary\"></div>";
 	}	
 }	
 
@@ -31,4 +31,3 @@ echo "class=\"btn btn-primary\">Details</a></div>";
 	
 	
 <!-- END MAIN -->
-

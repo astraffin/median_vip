@@ -2,12 +2,10 @@
 <?php
 
 // Database Config: Replace info inside "" with your database info.
-
-$db_server = "localhost";
-$db_user = "root";
-$db_pass = "password";
-$db_name = "reg";
-
+$db_server = "SERVER_NAME";
+$db_user = "USERNAME";
+$db_pass = "PASSWORD";
+$db_name = "DATABASE_NAME";
 
 
 
