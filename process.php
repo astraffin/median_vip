@@ -1,4 +1,5 @@
 <?php include('inc/head.php');?>
+<?php confirm_session(); ?>
 <?php include('inc/dbconnect.php');?>
 <!--- END HEAD -->
 <!--- NAVBAR -->

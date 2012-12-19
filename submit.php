@@ -1,4 +1,6 @@
 <?php include('inc/head.php');?>
+<?php confirm_session(); ?>
+
 <?php include('inc/dbconnect.php');?>
 <!--- END HEAD -->
 <!--- NAVBAR -->
@@ -14,9 +16,16 @@
 	$vprice = $_POST['vprice'];
 	$sdate = $_POST['sdate'];
 	$filedir = "files/";
-	
+	$subdir = $_SESSION['user_id'] . "/";
+	mkdir("files/" . $subdir, 0777);
+	$ext = findexts($_FILES['uploadedfile']['name']);
+	$tpr = $_SERVER['REQUEST_TIME'] + rand();
+	$filename = $_SESSION['user_id'] . "_" . $tpr . "." . $ext;
+
 //Upload file and save in files dir
-$filedir = $filedir . basename($_FILES['uploadedfile']['name']);
+$filedir = $filedir . $subdir;
+$filedir = $filedir . $filename;
+
 
 if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $filedir)) {
 	$imgloc = $filedir;
@@ -28,7 +37,7 @@ if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $filedir)) {
 
 echo "<div class=\"alert\"><strong>Heads up! This is just a preview. Click the button below to \"Submit this deal\" for approval.</strong></div>";
 echo "<div class=\"span4\">";
-echo "<img src=\"" . $imgloc . "\" class=\"img-polaroid\" width=\"400px\">";
+echo "<a href=\"" . $imgloc . "\"><img src=\"" . $imgloc . "\" class=\"img-polaroid\" width=\"400px\"></a>";
 echo "</div>";
 echo "<div class=\"span7\">";
 	

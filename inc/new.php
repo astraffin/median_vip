@@ -1,10 +1,11 @@
+<?php confirm_session(); ?>
 <!-- DB CONNECT -->
 <?php include('inc/dbconnect.php');?>
 <!-- END CONNECT-->
 <!-- MAIN BODY -->
 
 	<div class="page-title">
-	<h2>Create a new Deal</h2>
+	<h2>Create a  New Deal</h2>
 	</div>
 	<hr>
 	<p>Welcome. Please fill in the information below and a new deal will be submitted for approval.</p>		
@@ -34,7 +35,7 @@
 			<hr>
 			
 	
-	<input type="hidden" name="MAX_FILE_SIZE" value="200000">
+	<input type="hidden" name="MAX_FILE_SIZE" value="2000000">
 	<p><strong><em>Upload an image for this deal:</em></strong></p>
 	Choose a file to upload: <br>
 	<input name="uploadedfile" type="file"><br>
