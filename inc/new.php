@@ -11,7 +11,7 @@
 	<p>Welcome. Please fill in the information below and a new deal will be submitted for approval.</p>		
 	<hr>
 	
-	<form action="submit.php" enctype="multipart/form-data" method="post">
+	<form action="preview.php" enctype="multipart/form-data" method="post">
 	
 	<!--[if lte IE 8]><label for="fname">Deal Title: </label><![endif]-->
 			<input type="text" name="dtitle" class="span5" placeholder="Deal Title">

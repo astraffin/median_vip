@@ -55,8 +55,12 @@ echo "<p>" .  $ddesc . "</p>";
 echo "</div>";
 	
 echo "<div class=\"span6\">";
+echo "<br><br>";
+echo "<button class=\"btn btn-large btn-block btn-primary span2\">";
+echo "<i class=\"icon-arrow-left icon-white\"></i> Go Back</button>";
 
 echo "</div>";
+
 echo "<div class=\"span4\">";
 echo "<br><br>";
 
