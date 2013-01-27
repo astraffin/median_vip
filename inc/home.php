@@ -49,19 +49,19 @@
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="span4">
-          <img src="./img/200x200.gif">
+          <img src="./img/exsm.jpg">
           <h2>Heading</h2>
           <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
           <p><a class="btn" href="index.php">View details</a></p>
         </div><!-- /.span4 -->
         <div class="span4">
-          <img src="./img/200x200.gif">
+          <img src="./img/rodsm.jpg">
           <h2>Heading</h2>
           <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
           <p><a class="btn" href="index.php">View details</a></p>
         </div><!-- /.span4 -->
         <div class="span4">
-          <img src="./img/200x200.gif">
+          <img src="./img/insm.jpg">
           <h2>Heading</h2>
           <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
           <p><a class="btn" href="index.php">View details</a></p>

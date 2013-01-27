@@ -51,7 +51,7 @@ echo "</div>";
 echo "<div class=\"span10\">";
 echo "<br><br>";
 echo "<p>" .  $ddesc . "</p>";
-	
+
 echo "</div>";
 	
 echo "<div class=\"span6\">";
@@ -59,9 +59,11 @@ echo "<div class=\"span6\">";
 echo "</div>";
 echo "<div class=\"span4\">";
 echo "<br><br>";
+
 echo "<input type=\"button\" value=\"Submit this Deal\" class=\"btn btn-large btn-block btn-primary\" type=\"button\">";
 	
 echo "</div>";
+
 
 
 

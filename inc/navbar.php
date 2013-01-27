@@ -23,7 +23,7 @@ if ($_SESSION['is_dealer'] == 1){$isdealer = 1;} else {$isdealer = 0; }
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="index.php">Project name</a>
+                    <a class="brand" href="index.php">Median Magazine: VIP Club</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
                             <li <?php if (!$page){echo "class=\"active\"";}?>><a href="index.php">Home</a></li>
