@@ -2,8 +2,7 @@
 <?php
 
 // How sloppy is this?
-
-$page = $_GET['p'];
+if (isset($_GET['p'])){$page = $_GET['p'];} else { $_GET['p'] = NULL;}
 
 if (!$_GET['p']){
 	$page = "home";

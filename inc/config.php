@@ -5,7 +5,7 @@
 
 $db_server = "localhost";
 $db_user = "root";
-$db_pass = "password";
+$db_pass = "digital1";
 $db_name = "median_vip";
 
 

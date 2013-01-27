@@ -1,5 +1,7 @@
 <!--- NAVBAR -->
-<?php $page = $_GET['p']; ?>
+<?php $page = NULL ?>
+
+<?php if (isset($_GET['p'])) {$page = $_GET['p'];} ?>
 
 <!-- USER SESSION TEST -->
 <?php
@@ -8,9 +10,7 @@ if (isset($_SESSION['user_id'])){
 } else {
 	$user_session = FALSE;
 }
-if ($_SESSION['is_dealer'] == 1){
-$isdealer = 1;
-}
+if ($_SESSION['is_dealer'] == 1){$isdealer = 1;} else {$isdealer = 0; }
 
 ?>
 <!-- END USER SESSION TEST-->
@@ -49,7 +49,7 @@ $isdealer = 1;
 							<?php if(!$user_session){echo "<li><a href=\"index.php?p=ureg\" data-toggle=\"modal\">Register</a></li>";}?>
 							
 <!-- Logout Confirmation -->
-<?php if($_GET['lo'] == 1) {echo "<li class=\"nav-notice\"><span class=\"text-error\">You have </span><span class=\"responsive-hide text-error\">successfully </span><span class=\"text-error\">logged out!</span></li>";} ?>
+<?php if(isset($_GET['lo']) && $_GET['lo'] == 1){echo "<li class=\"nav-notice\"><span class=\"text-error\">You have </span><span class=\"responsive-hide text-error\">successfully </span><span class=\"text-error\">logged out!</span></li>";} ?>
 <!-- End logout confirmation -->
 							
                         </ul>
