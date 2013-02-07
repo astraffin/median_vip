@@ -10,12 +10,15 @@
 <?php
 
 //Set Variables
-	$dtitle = $_POST['dtitle'];
-	$ddesc = $_POST['ddesc'];
-	$oprice = $_POST['oprice'];
-	$vprice = $_POST['vprice'];
-	$sdate = $_POST['sdate'];
-
+	$dtitle = $_SESSION['dtitle'];
+	$ddesc = $_SESSION['ddesc'];
+	$oprice = $_SESSION['oprice'];
+	$vprice = $_SESSION['vprice'];
+	$sdate = $_SESSION['sdate'];
+	$imgloc = $_SESSION['imgloc'];
+	
+//Currently partial query
+if (mysql_query("INSERT INTO deals (deal_name, deal_text, deal_img) VALUES ( '$dtitle', '$ddesc', '$imgloc') ")){echo "You fucking win!";} else {echo "You fucking lose!"; echo "<br>" . mysql_error();}
 
 
 ?>

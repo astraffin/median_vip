@@ -11,10 +11,15 @@
 
 //Set Variables
 	$dtitle = $_POST['dtitle'];
+	$_SESSION['dtitle'] = mysql_escape_string($_POST['dtitle']);
 	$ddesc = $_POST['ddesc'];
+	$_SESSION['ddesc'] = mysql_escape_string($_POST['ddesc']);
 	$oprice = $_POST['oprice'];
+	$_SESSION['oprice'] = mysql_escape_string($_POST['oprice']);
 	$vprice = $_POST['vprice'];
+	$_SESSION['vprice'] = mysql_escape_string($_POST['vprice']);
 	$sdate = $_POST['sdate'];
+	$_SESSION['sdate'] = mysql_escape_string($_POST['sdate']);
 	$filedir = "files/";
 	$subdir = $_SESSION['user_id'] . "/";
 	mkdir("files/" . $subdir, 0777);
@@ -56,7 +61,7 @@ echo "</div>";
 	
 echo "<div class=\"span6\">";
 echo "<br><br>";
-echo "<button class=\"btn btn-large btn-block btn-primary span2\">";
+echo "<button class=\"btn btn-large btn-block btn-primary span2\" onclick=\"history.go(-1);\">";
 echo "<i class=\"icon-arrow-left icon-white\"></i> Go Back</button>";
 
 echo "</div>";
@@ -64,8 +69,12 @@ echo "</div>";
 echo "<div class=\"span4\">";
 echo "<br><br>";
 
-echo "<input type=\"button\" value=\"Submit this Deal\" class=\"btn btn-large btn-block btn-primary\" type=\"button\">";
-	
+echo "<a href=\"postdeal.php\"><input type=\"button\" value=\"Submit this Deal\" class=\"btn btn-large btn-block btn-primary\" type=\"button\"></a>";
+//Allocate variables to post global
+$_SESSION['imgloc'] = mysql_escape_string($imgloc);
+//Testing without
+
+
 echo "</div>";
 
 

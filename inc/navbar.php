@@ -23,7 +23,7 @@ if ($_SESSION['is_dealer'] == 1){$isdealer = 1;} else {$isdealer = 0; }
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="index.php">Median Magazine: VIP Club</a>
+                    <a class="brand" href="index.php">Median Mag: VIP Club</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
                             <li <?php if (!$page){echo "class=\"active\"";}?>><a href="index.php">Home</a></li>
@@ -49,7 +49,7 @@ if ($_SESSION['is_dealer'] == 1){$isdealer = 1;} else {$isdealer = 0; }
 							<?php if(!$user_session){echo "<li><a href=\"index.php?p=ureg\" data-toggle=\"modal\">Register</a></li>";}?>
 							
 <!-- Logout Confirmation -->
-<?php if(isset($_GET['lo']) && $_GET['lo'] == 1){echo "<li class=\"nav-notice\"><span class=\"text-error\">You have </span><span class=\"responsive-hide text-error\">successfully </span><span class=\"text-error\">logged out!</span></li>";} ?>
+<?php if(isset($_GET['lo']) && $_GET['lo'] == 1){echo "<li class=\"nav-notice\"><span class=\"text-error\"></span><span class=\"responsive-hide text-error\">You have successfully logged out!</span><span class=\"text-error\"></span></li>";} ?>
 <!-- End logout confirmation -->
 							
                         </ul>
