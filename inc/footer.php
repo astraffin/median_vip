@@ -3,7 +3,7 @@
             <hr>
 
             <footer>
-                <p>&copy; Median Media 2012</p>
+                <p>&copy; Median Media <?php echo date("Y"); ?> </p>
             </footer>
 		</div>
        

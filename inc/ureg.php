@@ -96,7 +96,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	
 	if ($errors == 0) {
 	$hashed_password = sha1($password);
-	$query = mysql_query("INSERT INTO users (fname, lname, address1, address2, email, username, hashed_password) VALUES ('" . $fname . "', '" . $lname . "', '" . $address1 . "', '" . $address2 . "', '" . $email . "', '" . $username . "', '" . $hashed_password . "')");
+	$is_dealer = $_POST['dealer'];
+	$query = mysql_query("INSERT INTO users (fname, lname, address1, address2, email, username, hashed_password, is_dealer) VALUES ('" . $fname . "', '" . $lname . "', '" . $address1 . "', '" . $address2 . "', '" . $email . "', '" . $username . "', '" . $hashed_password . "', '" . $is_dealer . "')");
 	if (!$query) {
 		echo "Error adding user to the database! " . mysql_error();
 	}
@@ -147,7 +148,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			<br>
 			<!--[if lte IE 8]><label for="pconf">Confirm Password: </label><![endif]-->
 			<input type="password" name="pconf" placeholder="Confirm Password" value="<?php echo htmlspecialchars($pconf);?>"><span class="text-error"><?php echo "&nbsp;&nbsp;&nbsp;&nbsp;<strong>" . $pconferr . "</strong>";?></span>
-			
+			<hr>
+			Are you interested in becoming a dealer?<br><br>
+			<select name="dealer" ><option value=0>No</option><option value=1>Yes</option></select>
 			<hr>
 			<button type="submit" class="btn btn-primary" name="continue">Continue &nbsp;<i class="icon-arrow-right icon-white"></i></button>
 		</form>

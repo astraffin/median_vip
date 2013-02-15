@@ -15,7 +15,27 @@ $exts = split("[/\\.]", $filename);
 $n = count($exts)-1;
 $exts = $exts[$n];
 return $exts;
+	
 }
 
+function truncate_string($string, $limit, $break=" ", $pad="...")
+{
+  // return with no change if string is shorter than $limit
+  if(strlen($string) <= $limit) return $string;
+
+  // is $break present between $limit and the end of the string?
+  if(false !== ($breakpoint = strpos($string, $break, $limit))) {
+    if($breakpoint < strlen($string) - 1) {
+      $string = substr($string, 0, $breakpoint) . $pad;
+    }
+  }
+
+  return $string;
+}
+
+function verify_image($filename)
+{
+	
+}
 
 ?>

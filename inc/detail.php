@@ -1,22 +1,47 @@
-
-
+<!--MAIN BODY -->
+<?php include('inc/dbconnect.php');?>
+<?php confirm_session(); ?>
+<?php
+	$deal_id = $_GET['DID'];
+	
+	
+	$deal_data = mysql_query("SELECT * FROM deals WHERE 'deal_id' = '" . $deal_id . "'");
+	
+	
+	while ($deal = mysql_fetch_array($deal_data)){
+		if (isset($deal)){
+			$imgloc = $deal['deal_img'];
+			$deal_title = $deal['deal_name'];
+			$deal_text = $deal['deal_text'];
+	
+			echo $deal_id;
+			echo $imgloc;
+			
+			}else{
+			
+			echo "$deal is not set";
+	
+		}
+	}
+	
+	
+	
+	?>
 	<div class="span4">
-	<img src="https://lastpass.com/media/pressroom/LastPassButton100x100.gif" class="img-polaroid" width="250px">
+	<img src="<?php $imgloc; ?>" class="img-polaroid" width="250px">
 	</div>
 	<div class="span7">
 	
-	<h1>Test Heading for Deal Detail</h1>
+	<h1><?php echo $deal_title; ?></h1>
 	
-	<h3>Store Name</h3>
-	<h5>54 Store address<br>Store address, MA 02134</h5>
+	<h3><?php echo $client_name; ?></h3>
+	<h5><?php echo $client_address1; ?><br><?php echo $client_address2; ?></h5>
 	
 	
 	</div>
 	<div class="span10">
 	<br><br>
-	<p> This is the text for the description of this deal. Can you guess how I came up with this description? I bet you can. I fucking wrote it all out by hand because Lorem Ipsum wont load on the fucking MBTA wireless. Epic right? yes. The answer is yes it is fucking epic. Buy my shit!<br><br>
-	This is the text for the description of this deal. Can you guess how I came up with this description? I bet you can. I fucking wrote it all out by hand because Lorem Ipsum wont load on the fucking MBTA wireless. Epic right? yes. The answer is yes it is fucking epic. Buy my shit!<br>
-	This is the text for the description of this deal. Can you guess how I came up with this description? I bet you can. I fucking wrote it all out by hand because Lorem Ipsum wont load on the fucking MBTA wireless. Epic right? yes. The answer is yes it is fucking epic. Buy my shit!</p>
+	<p><?php echo $deal_text; ?></p>
 	
 	</div>
 	
