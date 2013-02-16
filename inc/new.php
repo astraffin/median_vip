@@ -27,11 +27,7 @@
 	<!--[if lte IE 8]><label for="fname">VIP Price: </label><![endif]-->
 			<input type="text" name="vprice" placeholder="VIP Price">
 			
-			<hr>
 			
-	<!--[if lte IE 8]><label for="fname">Start Date: </label><![endif]-->
-			<input type="text" name="sdate" placeholder="Start Date"> <br>(All deals run for 30 days from original start date)
-
 			<hr>
 			
 	
@@ -39,7 +35,9 @@
 	<p><strong><em>Upload an image for this deal:</em></strong></p>
 	Choose a file to upload: <br>
 	<input name="uploadedfile" type="file"><br>
-	
+	<hr>
+			<div class="alert"><strong>Note: All deals run for 30 days from original start date</strong></div>
+
 	<hr>
 	
 	<button type="submit" class="btn btn-primary">

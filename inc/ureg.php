@@ -149,9 +149,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			<!--[if lte IE 8]><label for="pconf">Confirm Password: </label><![endif]-->
 			<input type="password" name="pconf" placeholder="Confirm Password" value="<?php echo htmlspecialchars($pconf);?>"><span class="text-error"><?php echo "&nbsp;&nbsp;&nbsp;&nbsp;<strong>" . $pconferr . "</strong>";?></span>
 			<hr>
-			Are you interested in becoming a dealer?<br><br>
-			<select name="dealer" ><option value=0>No</option><option value=1>Yes</option></select>
-			<hr>
+			
 			<button type="submit" class="btn btn-primary" name="continue">Continue &nbsp;<i class="icon-arrow-right icon-white"></i></button>
 		</form>
 

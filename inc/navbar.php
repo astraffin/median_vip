@@ -35,7 +35,8 @@ if ($_SESSION['is_dealer'] == 1){$isdealer = 1;} else {$isdealer = 0; }
 									<li <?php if ($page == "upro"){echo "class=\"active\"";}?>><a href="index.php?p=upro">Profile</a></li>
                                     <li <?php if ($page == "uhist"){echo "class=\"active\"";}?>><a href="index.php?p=uhist">History</a></li>
                                     <li <?php if ($page == "usel"){echo "class=\"active\"";}?>><a href="index.php?p=usel">Selections</a></li>
-                                    <li <?php if ($isdealer != 1){echo "class=\"nav-hidden\"";}?> class="divider"></li>
+                                    <li class="divider"></li>
+									<li <?php if ($isdealer != 0){echo "class=\"nav-hidden\"";} if ($page == "dreg"){echo "class=\"active\"";}?>><a href="index.php?p=dreg">Become a Dealer</a></li>
                                     <li <?php if ($isdealer != 1){echo "class=\"nav-hidden\"";}?> class="nav-header">Dealer Tools</li>
                                     <li <?php if ($isdealer != 1){echo "class=\"nav-hidden\"";} if ($page == "dpro"){echo "class=\"active\"";}?>><a href="index.php?p=dpro">Dealer Profile</a></li>
                                     <li <?php if ($isdealer != 1){echo "class=\"nav-hidden\"";} if ($page == "ddash"){echo "class=\"active\"";}?>><a href="index.php?p=ddash">Dealer Dashboard</a></li>
