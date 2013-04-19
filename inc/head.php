@@ -20,6 +20,8 @@
         </style>
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
         <link rel="stylesheet" href="css/main.css">
+		
+		
 
         <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
@@ -30,6 +32,9 @@
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 		<script src="js/bootstrap-datepicker.js"></script>
+		
+		
+		<link rel="stylesheet" href="css/font-awesome.min.css">
 		
     </head>
     <body>

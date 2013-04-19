@@ -8,7 +8,7 @@
 <!--- END NAVBAR -->
 <!--- MAIN BODY -->
 <?php
-
+error_reporting(E_ERROR);
 //Set Variables
 	$dtitle = $_POST['dtitle'];
 	$_SESSION['dtitle'] = mysql_escape_string($_POST['dtitle']);

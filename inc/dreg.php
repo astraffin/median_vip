@@ -4,6 +4,7 @@
 <!-- END CONNECT-->
 <!-- MAIN BODY -->
 <!-- FORM VALIDATION VARIABLES -->
+<?php error_reporting(E_ERROR); ?>
 <?php
 $dname = $address1 = $address2 = $email = $econf = $state = $zip = $phone = "";
 $dnameerr = $address1err = $address2err = $emailerr = $stateerr = $ziperr = $phoneerr = "";

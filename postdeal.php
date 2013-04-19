@@ -8,7 +8,7 @@
 <!--- END NAVBAR -->
 <!--- MAIN BODY -->
 <?php
-
+error_reporting(E_ERROR);
 //Set Variables
 	$dealer_id = $_SESSION['dealer_id'];
 	$dtitle = $_SESSION['dtitle'];

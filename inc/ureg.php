@@ -4,8 +4,8 @@
 <!-- MAIN BODY -->
 <!-- FORM VALIDATION VARIABLES -->
 <?php
-$fname = $lname = $address1 = $address2 = $email = $econf = $password = $pconf = "";
-$fnameerr = $lnameerr = $address1err = $address2err = $emailerr = $econferr = $passworderr = $pconferr = "";
+$fname = $lname = $address1 = $address2 = $city = $state = $zip = $birthdate = $email = $econf = $password = $pconf = $income = "";
+$fnameerr = $lnameerr = $address1err = $address2err = $cityerr = $stateerr = $ziperr = $birthdateerr = $emailerr = $econferr = $passworderr = $pconferr = $incomeerr = "";
 $errors = 0;
 $email_exist = "adfghgfrliudfhgeubfaybrkhghmjtbrebntazdxt"; //SUPER SECRET EMAIL VERIFICATION KEY
 $username_exist = "adfghgfrliudfhgeubfaybrkhghmjtbrebntazdxt"; //SUPER SECRET USERNAME VERIFICATION KEY
@@ -34,6 +34,27 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$address1 = $_POST['address1'];
 		$address2 = $_POST['address2'];
 	}
+	if (empty($_POST['city'])) {
+		$cityerr = "Please include your city.";
+		$errors++;
+	} 
+	else {
+		$city = $_POST['city'];
+	}
+	if (empty($_POST['state'])) {
+		$stateerr = "Please include your state.";
+		$errors++;
+	} 
+	else {
+		$state = $_POST['state'];
+	}
+	if (empty($_POST['zip'])) {
+		$ziperr = "Please include your zip code.";
+		$errors++;
+	} 
+	else {
+		$zip = $_POST['zip'];
+	}
 	if (empty($_POST['email'])) {
 		$emailerr = "Please include your email address.";
 		$errors++;
@@ -42,6 +63,20 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		
 		$email = $_POST['email'];
 		$econf = $_POST['econf'];
+	}
+	if (empty($_POST['birthdate'])) {
+		$birthdateerr = "Please include your birth date.";
+		$errors++;
+	} 
+	else {
+		$birthdate = $_POST['birthdate'];
+	}
+	if (empty($_POST['income'])) {
+		$incomeerr = "Please include your income level.";
+		$errors++;
+	} 
+	else {
+		$income = $_POST['income'];
 	}
 	if (empty($_POST['username'])) {
 		$usernameerr = "Please include a username.";
@@ -97,7 +132,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	if ($errors == 0) {
 	$hashed_password = sha1($password);
 	$is_dealer = $_POST['dealer'];
-	$query = mysql_query("INSERT INTO users (fname, lname, address1, address2, email, username, hashed_password, is_dealer) VALUES ('" . $fname . "', '" . $lname . "', '" . $address1 . "', '" . $address2 . "', '" . $email . "', '" . $username . "', '" . $hashed_password . "', '" . $is_dealer . "')");
+	$query = mysql_query("INSERT INTO users (fname, lname, address1, address2, city, state, zip, email, birthdate, income, username, hashed_password, is_dealer) VALUES ('" . $fname . "', '" . $lname . "', '" . $address1 . "', '" . $address2 . "', '" . $city . "', '" . $state . "', '" . $zip . "', '" . $email . "', '" . $birthdate . "', '" . $income . "', '" . $username . "', '" . $hashed_password . "', '" . $is_dealer . "')");
 	if (!$query) {
 		echo "Error adding user to the database! " . mysql_error();
 	}
@@ -133,6 +168,22 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			<br>
 			<!--[if lte IE 8]><label for="address2">Address (cont.): </label><![endif]-->
 			<input type="text" name="address2" placeholder="Address" value="<?php echo htmlspecialchars($address2);?>">
+			<br>
+			<!--[if lte IE 8]><label for="city">City: </label><![endif]-->
+			<input type="text" name="city" placeholder="City" value="<?php echo htmlspecialchars($city);?>"><span class="text-error reg-alerts"><?php echo "&nbsp;&nbsp;&nbsp;&nbsp;<strong>" . $cityerr . "</strong>";?></span>
+			<br>
+			<!--[if lte IE 8]><label for="state">State: </label><![endif]-->
+			<input type="text" name="state" placeholder="State" value="<?php echo htmlspecialchars($State);?>"><span class="text-error reg-alerts"><?php echo "&nbsp;&nbsp;&nbsp;&nbsp;<strong>" . $stateerr . "</strong>";?></span>
+			<br>
+			<!--[if lte IE 8]><label for="zip">Zip: </label><![endif]-->
+			<input type="text" name="zip" placeholder="Zip" value="<?php echo htmlspecialchars($zip);?>"><span class="text-error reg-alerts"><?php echo "&nbsp;&nbsp;&nbsp;&nbsp;<strong>" . $ziperr . "</strong>";?></span>
+			<br>
+			<!--[if lte IE 8]><label for="birthdate">Birthdate: </label><![endif]-->
+			<input type="text" name="birthdate" placeholder="Birthdate" value="<?php echo htmlspecialchars($birthdate);?>"><span class="text-error reg-alerts"><?php echo "&nbsp;&nbsp;&nbsp;&nbsp;<strong>" . $birthdateerr . "</strong>";?></span>
+			<br>
+			<!--[if lte IE 8]><label for="income">Income: </label><![endif]-->
+			<input type="text" name="income" placeholder="income" value="<?php echo htmlspecialchars($income);?>"><span class="text-error reg-alerts"><?php echo "&nbsp;&nbsp;&nbsp;&nbsp;<strong>" . $incomeerr . "</strong>";?></span>
+			
 			<br><br>
 			<!--[if lte IE 8]><label for="email">Email Address: </label><![endif]-->
 			<input type="text" name="email" placeholder="Email Address" value="<?php echo htmlspecialchars($email);?>"><span class="text-error"><?php echo "&nbsp;&nbsp;&nbsp;&nbsp;<strong>" . $emailerr . "</strong>";?></span>
@@ -149,7 +200,34 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			<!--[if lte IE 8]><label for="pconf">Confirm Password: </label><![endif]-->
 			<input type="password" name="pconf" placeholder="Confirm Password" value="<?php echo htmlspecialchars($pconf);?>"><span class="text-error"><?php echo "&nbsp;&nbsp;&nbsp;&nbsp;<strong>" . $pconferr . "</strong>";?></span>
 			<hr>
+			<strong>What types of deals are you interested in?</strong><br><em>(Select as many as you like)</em>
+			<hr>
+			<?php
+				
+					$query = mysql_query("SELECT * FROM categories");
+					
 			
+				while ($category = mysql_fetch_array($query)){
+				
+				if (isset($category)){
+					$cat_id = $category['cat_id'];
+					$cat_name = $category['cat_name'];
+					$parent_cat = $category['parent_cat'];
+					
+										
+					echo "<label class=\"checkbox\">";
+					echo "<input type=\"checkbox\"";
+					echo "name=\"" . $cat_id . "\" ";
+					echo "value=" . $cat_id . ">";
+					echo $cat_name . "</label> <br>";
+					
+					
+					}
+				}
+			
+			?>
+			
+			<hr>
 			<button type="submit" class="btn btn-primary" name="continue">Continue &nbsp;<i class="icon-arrow-right icon-white"></i></button>
 		</form>
 

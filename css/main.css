@@ -33,6 +33,27 @@ html {overflow-y:scroll;}
 	position: static;
 }
 
+/* VIP Price Burst (Full Width) */
+.vprice-burst {
+	float: right;
+	margin: -10px 20% 0 0;
+	font-size: 240px;
+	color: gold;
+}
+
+.vprice {
+	font-size: 36px;
+	color: black;
+	margin: -167px 0 0 32px;
+	position: absolute;
+	line-height: 40px;
+	width: 143px;
+}
+
+/* Adjusts deals page thumb down 10px to align with description */
+.deal-thumb {
+	margin: 10px 0 0 0;
+}
 
 /* Carousel Configs */
 
@@ -58,7 +79,6 @@ html {overflow-y:scroll;}
     .carousel-control {
       background-color: transparent;
       border: 0;
-      font-size: 120px;
       margin-top: 0;
       text-shadow: 0 1px 1px rgba(0,0,0,.4);
     }
@@ -187,6 +207,23 @@ html {overflow-y:scroll;}
         max-width: 40%;
         margin: 0 auto 20px;
       }
+	  
+/* VIP Price Burst (Responsive) */
+	.vprice-burst {
+	float: right;
+	margin: -10px 10% 0 0;
+	font-size: 200px;
+	color: gold;
+}
+
+.vprice {
+	font-size: 32px;
+	color: black;
+	margin: -147px 0 0 14px;
+	position: absolute;
+	line-height: 40px;
+	width: 143px;
+}
     }
 
 
@@ -234,4 +271,21 @@ html {overflow-y:scroll;}
         line-height: 1.5;
       }
 
+/* VIP Price Burst (Responsive) */
+	.vprice-burst {
+	float: left;
+	margin: -10px 10 0 0;
+	font-size: 160px;
+	color: gold;
+}
+
+.vprice {
+	font-size: 24px;
+	color: black;
+	margin: -110px 0 0 17px;
+	position: absolute;
+	line-height: 25px;
+	width: 103px;
+}
     }
+	

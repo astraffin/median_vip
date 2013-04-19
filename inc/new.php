@@ -3,7 +3,7 @@
 <?php include('inc/dbconnect.php');?>
 <!-- END CONNECT-->
 <!-- MAIN BODY -->
-
+<?php error_reporting(E_ERROR); ?>
 	<div class="page-title">
 	<h2>Create a  New Deal</h2>
 	</div>

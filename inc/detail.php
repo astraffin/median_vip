@@ -12,6 +12,9 @@
 			$imgloc = $deal['deal_img'];
 			$deal_title = $deal['deal_name'];
 			$deal_text = $deal['deal_text'];
+			$deal_oprice = $deal['deal_oprice'];
+			$deal_vprice = $deal['deal_vprice'];
+			$deal_sprice = $deal_oprice - $deal_vprice;
 	
 	$dealer_data = mysql_query("SELECT * FROM dealers WHERE dealer_id = '" . $deal['dealer_id'] . "'");
 			
@@ -33,16 +36,17 @@
 	<img src="<?php echo $imgloc; ?>" class="img-polaroid" width="400px">
 	</div>
 	<div class="span7">
+	<!-- INSERT SALE BURST BELOW -->
 	
 	<h1><?php echo $deal_title; ?></h1>
-	<br>
+	<div class="vprice-burst"><i class="icon-certificate"></i><div class="vprice"><center><strong>SAVE<br>$<?php echo $deal_sprice . "!"; ?></strong></center></div></div>
 	<h3><?php echo $dealer_name; ?></h3>
 	<h5><?php echo $dealer_address1; ?><br><?php echo $dealer_address2; ?><br><?php echo $dealer_state . ", " . $dealer_zip; ?><br><?php echo "Phone: " . $dealer_phone; ?><br><?php echo "Email: " . $dealer_email; ?></h5>
 	
 	
 	</div>
 	<div class="span10">
-	<br><br>
+	
 	<p><?php echo $deal_text; ?></p>
 	
 	</div>
