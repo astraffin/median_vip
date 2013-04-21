@@ -95,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	if ($errors == 0) {
 	$hashed_password = sha1($password);
 	$is_dealer = $_POST['dealer'];
-	$query = mysql_query("INSERT INTO dealers (user_id, dealer_name, dealer_address1, dealer_address2, dealer_state, dealer_zip, dealer_phone, dealer_email, dealer_start) VALUES ('" . $_SESSION['user_id'] . "', '" . mysql_escape_string($dname) . "', '" . mysql_escape_string($address1) . "', '" . mysql_escape_string($address2) . "', '" . mysql_escape_string($state) . "', '" . mysql_escape_string($zip) . "', '" . mysql_escape_string($phone) . "', '" . mysql_escape_string($email) . "', DATE(NOW()))");
+	$query = mysql_query("INSERT INTO dealers (user_id, dealer_name, dealer_address1, dealer_address2, dealer_state, dealer_zip, dealer_phone, dealer_email, start_date) VALUES ('" . $_SESSION['user_id'] . "', '" . mysql_escape_string($dname) . "', '" . mysql_escape_string($address1) . "', '" . mysql_escape_string($address2) . "', '" . mysql_escape_string($state) . "', '" . mysql_escape_string($zip) . "', '" . mysql_escape_string($phone) . "', '" . mysql_escape_string($email) . "', DATE(NOW()))");
 	if (!$query) {
 		echo "Error adding company to the database! " . mysql_error();
 	}
