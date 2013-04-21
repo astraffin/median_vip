@@ -71,13 +71,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	else {
 		$birthdate = $_POST['birthdate'];
 	}
-	if (empty($_POST['income'])) {
-		$incomeerr = "Please include your income level.";
-		$errors++;
-	} 
-	else {
-		$income = $_POST['income'];
-	}
 	if (empty($_POST['username'])) {
 		$usernameerr = "Please include a username.";
 		$errors++;
@@ -173,18 +166,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			<input type="text" name="city" placeholder="City" value="<?php echo htmlspecialchars($city);?>"><span class="text-error reg-alerts"><?php echo "&nbsp;&nbsp;&nbsp;&nbsp;<strong>" . $cityerr . "</strong>";?></span>
 			<br>
 			<!--[if lte IE 8]><label for="state">State: </label><![endif]-->
-			<input type="text" name="state" placeholder="State" value="<?php echo htmlspecialchars($State);?>"><span class="text-error reg-alerts"><?php echo "&nbsp;&nbsp;&nbsp;&nbsp;<strong>" . $stateerr . "</strong>";?></span>
+			<input type="text" name="state" placeholder="State" value="<?php echo htmlspecialchars($state);?>"><span class="text-error reg-alerts"><?php echo "&nbsp;&nbsp;&nbsp;&nbsp;<strong>" . $stateerr . "</strong>";?></span>
 			<br>
 			<!--[if lte IE 8]><label for="zip">Zip: </label><![endif]-->
 			<input type="text" name="zip" placeholder="Zip" value="<?php echo htmlspecialchars($zip);?>"><span class="text-error reg-alerts"><?php echo "&nbsp;&nbsp;&nbsp;&nbsp;<strong>" . $ziperr . "</strong>";?></span>
 			<br>
 			<!--[if lte IE 8]><label for="birthdate">Birthdate: </label><![endif]-->
 			<input type="text" name="birthdate" placeholder="Birthdate" value="<?php echo htmlspecialchars($birthdate);?>"><span class="text-error reg-alerts"><?php echo "&nbsp;&nbsp;&nbsp;&nbsp;<strong>" . $birthdateerr . "</strong>";?></span>
-			<br>
-			<!--[if lte IE 8]><label for="income">Income: </label><![endif]-->
-			<input type="text" name="income" placeholder="income" value="<?php echo htmlspecialchars($income);?>"><span class="text-error reg-alerts"><?php echo "&nbsp;&nbsp;&nbsp;&nbsp;<strong>" . $incomeerr . "</strong>";?></span>
-			
 			<br><br>
+		
 			<!--[if lte IE 8]><label for="email">Email Address: </label><![endif]-->
 			<input type="text" name="email" placeholder="Email Address" value="<?php echo htmlspecialchars($email);?>"><span class="text-error"><?php echo "&nbsp;&nbsp;&nbsp;&nbsp;<strong>" . $emailerr . "</strong>";?></span>
 			<br>
@@ -199,34 +189,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			<br>
 			<!--[if lte IE 8]><label for="pconf">Confirm Password: </label><![endif]-->
 			<input type="password" name="pconf" placeholder="Confirm Password" value="<?php echo htmlspecialchars($pconf);?>"><span class="text-error"><?php echo "&nbsp;&nbsp;&nbsp;&nbsp;<strong>" . $pconferr . "</strong>";?></span>
-			<hr>
-			<strong>What types of deals are you interested in?</strong><br><em>(Select as many as you like)</em>
-			<hr>
-			<?php
-				
-					$query = mysql_query("SELECT * FROM categories");
-					
-			
-				while ($category = mysql_fetch_array($query)){
-				
-				if (isset($category)){
-					$cat_id = $category['cat_id'];
-					$cat_name = $category['cat_name'];
-					$parent_cat = $category['parent_cat'];
-					
-										
-					echo "<label class=\"checkbox\">";
-					echo "<input type=\"checkbox\"";
-					echo "name=\"" . $cat_id . "\" ";
-					echo "value=" . $cat_id . ">";
-					echo $cat_name . "</label> <br>";
-					
-					
-					}
-				}
-			
-			?>
-			
+
 			<hr>
 			<button type="submit" class="btn btn-primary" name="continue">Continue &nbsp;<i class="icon-arrow-right icon-white"></i></button>
 		</form>

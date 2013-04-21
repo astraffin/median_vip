@@ -7,7 +7,7 @@
             </footer>
 		</div>
        
-		
+		<script src="js/main.js"></script>
 	
     <script>
       !function ($) {

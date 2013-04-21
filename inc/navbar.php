@@ -29,12 +29,12 @@ if ($_SESSION['is_dealer'] == 1){$isdealer = 1;} else {$isdealer = 0; }
                             <li <?php if (!$page){echo "class=\"active\"";}?>><a href="index.php">Home</a></li>
                             <li <?php if (!$user_session){echo "class=\"nav-hidden\"";}?><?php if ($page == "deals"){echo " class=\"active\"";}?>><a href="index.php?p=deals">Deals</a></li>
 							<li <?php if (!$user_session){echo " class=\"nav-hidden\"";}?> class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li <?php if ($page == "udash"){echo "class=\"active\"";}?>><a href="index.php?p=udash">User Dashboard</a></li>
+                                    <li <?php if ($page == "udash"){echo "class=\"active\"";}?>><a href="index.php?p=udash">Dashboard</a></li>
 									<li <?php if ($page == "upro"){echo "class=\"active\"";}?>><a href="index.php?p=upro">Profile</a></li>
                                     <li <?php if ($page == "uhist"){echo "class=\"active\"";}?>><a href="index.php?p=uhist">History</a></li>
-                                    <li <?php if ($page == "usel"){echo "class=\"active\"";}?>><a href="index.php?p=usel">Selections</a></li>
+                                    <li <?php if ($page == "uset"){echo "class=\"active\"";}?>><a href="index.php?p=uset">Settings</a></li>
                                     <li class="divider"></li>
 									<li <?php if ($isdealer != 0){echo "class=\"nav-hidden\"";} if ($page == "dreg"){echo "class=\"active\"";}?>><a href="index.php?p=dreg">Become a Dealer</a></li>
                                     <li <?php if ($isdealer != 1){echo "class=\"nav-hidden\"";}?> class="nav-header">Dealer Tools</li>
@@ -69,3 +69,4 @@ if ($_SESSION['is_dealer'] == 1){$isdealer = 1;} else {$isdealer = 0; }
 
 <!-- MAIN CONTAINER START -->
 <div class="container">
+
