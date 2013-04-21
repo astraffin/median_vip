@@ -1,5 +1,5 @@
 <!-- MAIN BODY -->
-
+<?php error_reporting(E_ERROR); ?>
 			<div class="page-title">
 			<h2>Sign up complete!</h2>
 			</div>

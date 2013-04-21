@@ -4,6 +4,7 @@
 <!-- MAIN BODY -->
 <!-- FORM VALIDATION VARIABLES -->
 <?php
+error_reporting(E_ERROR);
 $fname = $lname = $address1 = $address2 = $city = $state = $zip = $birthdate = $email = $econf = $password = $pconf = $income = "";
 $fnameerr = $lnameerr = $address1err = $address2err = $cityerr = $stateerr = $ziperr = $birthdateerr = $emailerr = $econferr = $passworderr = $pconferr = $incomeerr = "";
 $errors = 0;
