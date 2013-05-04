@@ -17,7 +17,16 @@ if ($_POST != NULL){
 	mysql_query("INSERT INTO user2cat (user_id, cat_id) values (" . $_SESSION['user_id'] . ", " . $value . ")");
 	}
 	mysql_query("UPDATE users SET is_setup = 1 WHERE user_id = " . $_SESSION['user_id']);
+	
+	//Make user is_setup = true
 	$_SESSION['is_setup'] = 1;
+	
+	//send to deals page
+	echo "<script type=\"text/javascript\">
+	<!--
+	window.location = \"http://localhost/median_vip/index.php?p=deals\"
+	//-->
+	</script>";
 }
 
 //debug: created array of new chosen categories
