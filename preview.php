@@ -63,6 +63,42 @@ echo "<p>" .  htmlspecialchars($ddesc) . "</p>";
 
 echo "</div>";
 	
+
+
+?>
+<!--Selections -->
+<div class="span10">
+<br><br>
+<hr>
+<strong>Please select the the categories related to your deal.</strong><br><em>(Select as many as you like)</em>
+<hr>
+			<?php
+			echo "<form action=\"index.php?p=dset\" method=\"post\">";
+		//Displays categories		
+				$query = mysql_query("SELECT * FROM categories");
+					
+			
+				while ($category = mysql_fetch_array($query)){
+				
+				if (isset($category)){
+					$cat_id = $category['cat_id'];
+					$cat_name = $category['cat_name'];
+					$parent_cat = $category['parent_cat'];
+					
+										
+					echo "<label class=\"checkbox\">";
+					echo "<input type=\"checkbox\"";
+					echo "name=\"category" . $cat_id . "\" ";
+					echo "value=" . $cat_id . ">";
+					echo $cat_name . "</label> <br>";
+					
+					
+					
+					}
+				}
+?>
+</div>
+<?php
 echo "<div class=\"span6\">";
 echo "<br><br>";
 echo "<button class=\"btn btn-large btn-block btn-primary span2\" onclick=\"history.go(-1);\">";
@@ -73,18 +109,13 @@ echo "</div>";
 echo "<div class=\"span4\">";
 echo "<br><br>";
 
-echo "<a href=\"postdeal.php\"><input type=\"button\" value=\"Submit this Deal\" class=\"btn btn-large btn-block btn-primary\" type=\"button\"></a>";
+echo "<input type=\"submit\" value=\"Submit this Deal\" class=\"btn btn-large btn-block btn-primary\">";
 //Allocate variables to post global
 $_SESSION['imgloc'] = mysql_escape_string($imgloc);
 //Testing without
 
 
 echo "</div>";
-
-
-
-
-
 ?>
 <!--- END MAIN -->
 <!--- FOOTER -->

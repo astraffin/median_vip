@@ -10,6 +10,7 @@ if (isset($_SESSION['user_id'])){
 } else {
 	$user_session = FALSE;
 }
+$_SESSION['is_dealer'] = $_SESSION['is_dealer'];
 if ($_SESSION['is_dealer'] == 1){$isdealer = 1;} else {$isdealer = 0; }
 
 ?>
