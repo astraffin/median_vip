@@ -7,7 +7,7 @@ $db_user = "median_db_user";
 $db_pass = "passenger57!";
 $db_name = "median_vip";
 
-
+$website_url = "http://blazingsasquatch.com/median_vip/";
 
 
 

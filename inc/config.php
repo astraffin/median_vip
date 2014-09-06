@@ -8,6 +8,8 @@ $db_user = "root";
 $db_pass = "digital1";
 $db_name = "median_vip";
 
+$website_url = "http://localhost/median_vip/";
+
 
 
 
