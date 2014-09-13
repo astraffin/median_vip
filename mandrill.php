@@ -31,7 +31,7 @@ $result2 = mysql_query("SELECT * FROM user2cat WHERE user_id = " . $contact_arra
 $mail->Body    = 'The categories that you subscribe to are: ';
 while ($content_array = mysql_fetch_array($result2)){          // For this category, show the next deal
 //$mail->Body   .= $content_array['cat_id'] . ", ";
-$result3 = mysql_query("SELECT DISTINCT FROM deal2cat WHERE cat_id = " . $content_array['cat_id']); // For this category pull all associated deal_IDs
+$result3 = mysql_query("SELECT DISTINCT deal_id FROM deal2cat WHERE cat_id = " . $content_array['cat_id']); // For this category pull all associated deal_IDs
 while ($deal_array = mysql_fetch_array($result3)){             // For this deal proceed to next step
 //-------------------------------------------------------------------------------------------------------------------------------------------
 //$imgpath = path to image for deal populated from database
