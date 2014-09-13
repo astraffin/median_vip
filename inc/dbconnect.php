@@ -5,7 +5,7 @@ include('config.php');
 
 
 // Connect
-$link = mysql_connect($db_server, $db_user, $db_pass);
+$link = mysql_connect($db_server, $db_user);
 if (!$link) {
 	die("Database Connection Failed : " . mysql_error());
 }
