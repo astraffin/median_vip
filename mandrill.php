@@ -2,9 +2,9 @@
 <?php require_once('inc/functions.php');?>
 <?php
 require 'classes/class.phpmailer.php';
-
-$result = mysql_query("SELECT * FROM users WHERE alerts = 1"); // Pull all users that want emails
-while ($contact_array = mysql_fetch_array($result)){           // For this user, generate an email
+$deal_id = 0;
+$alert_result = mysql_query("SELECT * FROM users WHERE alerts = 1"); // Pull all users that want emails
+while ($contact_array = mysql_fetch_array($alert_result)){           // For this user, generate an email
 
 $mail = new PHPMailer;
 
@@ -25,15 +25,21 @@ $mail->IsHTML(true);                                  // Set email format to HTM
 
 $mail->Subject = $contact_array['fname'] . ", " . 'Here are your latest deals!';
 
-$result2 = mysql_query("SELECT * FROM user2cat WHERE user_id = " . $contact_array['user_id']); // For this user pull all associated category_IDs
+$cat_result = mysql_query("SELECT * FROM user2cat WHERE user_id = " . $contact_array['user_id']); // For this user pull all associated category_IDs
 
 
-$mail->Body    = 'The categories that you subscribe to are: ';
-while ($content_array = mysql_fetch_array($result2)){          // For this category, show the next deal
+//$mail->Body    = 'The categories that you subscribe to are: ';
+while ($content_array = mysql_fetch_array($cat_result)){          // For this category, show the next deal
+	
 //$mail->Body   .= $content_array['cat_id'] . ", ";
-$result3 = mysql_query("SELECT DISTINCT deal_id FROM deal2cat WHERE cat_id = " . $content_array['cat_id']); // For this category pull all associated deal_IDs
-while ($deal_array = mysql_fetch_array($result3)){             // For this deal proceed to next step
+
+//  PROBLEM
+$deal_result = mysql_query("SELECT DISTINCT deal_id FROM deal2cat WHERE cat_id = " . $content_array['cat_id']); // For this category pull all associated deal_IDs
+// /PROBLEM
+
+while ($deal_array = mysql_fetch_array($deal_result)){             // For this deal proceed to next step
 //-------------------------------------------------------------------------------------------------------------------------------------------
+
 //$imgpath = path to image for deal populated from database
 //$dealtext_short = deal_text from database cut to 186char.
 $deal_data = mysql_query("SELECT * FROM deals WHERE deal_id = " . $deal_array['deal_id']);
@@ -41,8 +47,8 @@ $deal_data = mysql_query("SELECT * FROM deals WHERE deal_id = " . $deal_array['d
 //WHERE DATE(deal_end) >= DATE(NOW())
 	
 while ($deal = mysql_fetch_array($deal_data)){
-		
-	if (isset($deal)){
+	
+	if (isset($deal) AND $deal_id != $deal['deal_id']){
 		$deal_id = $deal['deal_id'];
 		$deal_name = $deal['deal_name'];
 		$img_path = $deal['deal_img'];
@@ -51,6 +57,7 @@ while ($deal = mysql_fetch_array($deal_data)){
 		$deal_oprice = $deal['deal_oprice'];
 		$deal_vprice = $deal['deal_vprice'];
 		$deal_sprice = $deal_oprice - $deal_vprice;
+		
 		
 		
 		
@@ -64,13 +71,15 @@ $mail->Body    .=  "<div class=\"span2\">";
 $mail->Body    .=  "<br>";
 $mail->Body    .=  "<span class=\"label label-success\"><i class=\"icon-tag icon-white\"></i><strong>SAVE " . $deal_sprice . "!</strong></span>";
 $mail->Body    .=  "<br><br>";
-$mail->Body    .=  "<a href=\"index.php?p=detail&DID=" . $deal_id . "\" ";
+$mail->Body    .=  "<a href=\"" . $website_url . "index.php?p=detail&DID=" . $deal_id . "\" ";
 $mail->Body    .=  "class=\"btn btn-primary\">Details</a></div>";
 		}
 	}	
 }	
 //------------------------------------------------------------------------------------------------------------------------------------------
 }
+}
+
 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
 if(!$mail->Send()) {
@@ -78,5 +87,5 @@ if(!$mail->Send()) {
    echo 'Mailer Error: ' . $mail->ErrorInfo;
    exit;
 }
-}
+
 echo 'Message has been sent';
