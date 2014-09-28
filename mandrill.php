@@ -61,7 +61,7 @@ while ($deal = mysql_fetch_array($deal_data)){
 		
 		
 		
-$mail->Body    .=  "<div class=\"span10\"><hr></div>";
+
 $mail->Body    .=  "<div class=\"span2\"><div class=\"deal-thumb\"><img src=\"";
 $mail->Body    .=  $website_url . $img_path;                         //Edit for Localhosting files (PLEASE REMOVE)
 $mail->Body    .=  "\" class=\"img-polaroid\"></div></div><div class=\"span6\">";
@@ -73,6 +73,7 @@ $mail->Body    .=  "<span class=\"label label-success\"><i class=\"icon-tag icon
 $mail->Body    .=  "<br><br>";
 $mail->Body    .=  "<a href=\"" . $website_url . "index.php?p=detail&DID=" . $deal_id . "\" ";
 $mail->Body    .=  "class=\"btn btn-primary\">Details</a></div>";
+$mail->Body    .=  "<div class=\"span10\"><hr></div>";
 		}
 	}	
 }	
