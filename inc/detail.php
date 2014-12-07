@@ -3,7 +3,20 @@
 <?php confirm_session(); ?>
 <?php
 	$deal_id = $_GET['DID'];
+	//echo $_SESSION['user_id'];
+	//Checks to see if this deals already been got by this user
+	$gotquery = mysql_query("SELECT * FROM user2deal WHERE user_id = " . $_SESSION['user_id'] . " AND deal_id = " . $deal_id);
+	$got = mysql_fetch_array($gotquery);
+	if ($got != NULL) {$thisdeal_sent = 1;}
 	
+	if ($_POST['deal_id'] == $deal_id){
+		$thisuser_id = $_POST['user_id'];
+		$thisdeal_id = $_POST['deal_id'];
+		$thisdealer_id = $_POST['dealer_id'];
+		$thisdeal_sent = 1;
+		
+		mysql_query("INSERT INTO user2deal (user_id, deal_id, dealer_id, date_req) VALUES ('$thisuser_id', '$thisdeal_id', '$thisdealer_id', NOW())");
+	} 
 	
 	$deal_data = mysql_query("SELECT * FROM deals WHERE deal_id = '" . $deal_id . "'");
 	
@@ -20,6 +33,7 @@
 			
 	$dealer = mysql_fetch_array($dealer_data);
 
+			$dealer_id = $dealer['dealer_id'];
 			$dealer_name = $dealer['dealer_name'];
 			$dealer_address1 = $dealer['dealer_address1'];
 			$dealer_address2 = $dealer['dealer_address2'];
@@ -56,7 +70,11 @@
 	</div>
 	<div class="span4">
 	<br><br>
-	<input type="button" value="Get this Deal" class="btn btn-large btn-block btn-primary" type="button">
-	
+	<form action="index.php?p=detail&DID=<?php echo $deal_id;?>" enctype="multipart/form-data" method="post">
+	<input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
+	<input type="hidden" name="deal_id" value="<?php echo $deal_id; ?>">
+	<input type="hidden" name="dealer_id" value="<?php echo $dealer_id; ?>">
+	<input type="submit" <?php if ($thisdeal_sent == 1){ echo "disabled=\"disabled\" value=\"You Got It!\"";} else { echo "value=\"Get this Deal\""; } ?> class="btn btn-large btn-block btn-primary">
+	</form>
 	</div>
 

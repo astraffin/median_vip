@@ -15,7 +15,7 @@
 	$imgloc = $_SESSION['imgloc'];
 	
 //Push deal to DB - Currently partial query
-if (mysql_query("INSERT INTO deals (dealer_id, deal_name, deal_text, deal_img, deal_start, deal_oprice, deal_vprice) VALUES ( '$dealer_id', '$dtitle', '$ddesc', '$imgloc', DATE(NOW()), '$oprice', '$vprice')")){echo "You fucking win!";} else {echo "You fucking lose!"; echo "<br>" . mysql_error();}
+if (mysql_query("INSERT INTO deals (dealer_id, deal_name, deal_text, deal_img, deal_start, deal_oprice, deal_vprice, deal_active) VALUES ( '$dealer_id', '$dtitle', '$ddesc', '$imgloc', DATE(NOW()), '$oprice', '$vprice', 0)")){echo "You fucking win!";} else {echo "You fucking lose!"; echo "<br>" . mysql_error();}
 
 $query = mysql_query("SELECT * FROM deals WHERE dealer_id = '" . $_SESSION['dealer_id'] . "' AND deal_name = '" . $_SESSION['dtitle'] . "'");
 $result = mysql_fetch_array($query);

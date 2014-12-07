@@ -64,7 +64,7 @@ class SMTP
      * @deprecated This is only ever used as a default value, so use the constant instead
      * @see SMTP::DEFAULT_SMTP_PORT
      */
-    public $SMTP_PORT = 25;
+    public $SMTP_PORT = 587;
 
     /**
      * SMTP reply line ending.

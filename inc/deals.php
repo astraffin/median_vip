@@ -6,7 +6,7 @@
 <?php
 //$imgpath = path to image for deal populated from database
 //$dealtext_short = deal_text from database cut to 140char.
-$deal_data = mysql_query("SELECT * FROM deals");
+$deal_data = mysql_query("SELECT * FROM deals WHERE deal_active = 1");
 //removed from sql query while start and end dates are up in the air
 //WHERE DATE(deal_end) >= DATE(NOW())
 	

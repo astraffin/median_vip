@@ -3,12 +3,12 @@
 
 // Database Config: Replace info inside "" with your database info.
 
-$db_server = "localhost";
-$db_user = "root";
-$db_pass = "digital1";
-$db_name = "median_vip";
+$db_server = "127.0.0.1";
+$db_user = "astraffin";
+$db_pass = NULL;
+$db_name = "c9";
 
-$website_url = "http://localhost/median_vip/";
+$website_url = "http://median_vip-c9-astraffin.c9.io/";
 
 
 
